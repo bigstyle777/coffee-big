@@ -1,0 +1,115 @@
+:root {
+  --coffee-primary: #3c2a21;
+  --coffee-primary-soft: #5a4136;
+  --coffee-accent: #d5cea3;
+  --coffee-accent-deep: #b08968;
+  --coffee-bg: #f5f2ec;
+  --coffee-card: #ffffff;
+  --coffee-line: #e9e1d5;
+  --coffee-text: #2b1d16;
+  --coffee-muted: #8c7b6b;
+
+  --el-color-primary: #8c5e3c;
+  --el-color-primary-light-3: #a87754;
+  --el-color-primary-light-5: #bf9473;
+  --el-color-primary-light-7: #dcbfa8;
+  --el-color-primary-light-8: #ead7c7;
+  --el-color-primary-light-9: #f5ebe2;
+  --el-color-primary-dark-2: #6f462a;
+  --el-border-radius-base: 8px;
+  --el-font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei',
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--coffee-bg);
+  color: var(--coffee-text);
+  font-family: var(--el-font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-card {
+  background-color: var(--coffee-card);
+  border: 1px solid var(--coffee-line);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(60, 42, 33, 0.04);
+}
+
+.page-card + .page-card {
+  margin-top: 18px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--coffee-line);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.card-body {
+  padding: 20px 22px;
+}
+
+.muted {
+  color: var(--coffee-muted);
+}
+
+.money {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(140, 123, 107, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.el-table {
+  --el-table-border-color: var(--coffee-line);
+  --el-table-header-bg-color: #faf7f2;
+  --el-table-header-text-color: var(--coffee-muted);
+  --el-table-row-hover-bg-color: #fbf8f4;
+}
+
+.el-dialog {
+  border-radius: 16px;
+}
+
+.el-button--primary {
+  --el-button-bg-color: #8c5e3c;
+  --el-button-border-color: #8c5e3c;
+  --el-button-hover-bg-color: #a87754;
+  --el-button-hover-border-color: #a87754;
+}

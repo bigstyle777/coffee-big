@@ -1,0 +1,32 @@
+# 本地开发环境：默认连接本机 MySQL / Redis，开箱即用
+spring:
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/coffee_big?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+
+mybatis-plus:
+  configuration:
+    # 开发环境打印 SQL，便于排查
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+coffee:
+  auth:
+    # 本地开发也必须通过 JWT_SECRET 提供，至少 32 位；不要使用仓库中的任何示例值
+    jwt-secret: ${JWT_SECRET:}
+    # 本地未配置微信密钥时，允许 H5 通过 /api/auth/dev-login 预览完整功能
+    dev-login-enabled: true
+  pay:
+    provider: ${PAY_PROVIDER:mock}
+    # 仅本地开发开启模拟支付
+    mock-enabled: ${PAY_MOCK_ENABLED:true}
+
+logging:
+  level:
+    com.coffee: debug

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    {
+      "path": "pages/menu/index",
+      "style": {
+        "navigationBarTitleText": "拾光咖啡"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/order/list",
+      "style": {
+        "navigationBarTitleText": "我的订单",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/order/detail",
+      "style": {
+        "navigationBarTitleText": "订单详情"
+      }
+    },
+    {
+      "path": "pages/seckill/index",
+      "style": {
+        "navigationBarTitleText": "限时秒杀",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "拾光咖啡",
+    "navigationBarBackgroundColor": "#FAF7F2",
+    "backgroundColor": "#FAF7F2",
+    "backgroundTextStyle": "dark"
+  }
+}

@@ -1,0 +1,40 @@
+# 生产环境：所有敏感配置必须通过环境变量注入，缺失时启动失败，避免带默认密码上线
+spring:
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    hikari:
+      maximum-pool-size: ${MYSQL_POOL_SIZE:20}
+      minimum-idle: ${MYSQL_MIN_IDLE:5}
+      connection-timeout: 5000
+      max-lifetime: 1800000
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+
+# 生产环境关闭 SQL 明细日志，避免泄露数据与拖慢性能
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+
+coffee:
+  auth:
+    jwt-secret: ${JWT_SECRET}
+    dev-login-enabled: false
+  pay:
+    provider: ${PAY_PROVIDER:mock}
+    # 正式上线必须关闭模拟支付
+    mock-enabled: ${PAY_MOCK_ENABLED:false}
+
+server:
+  # 部署在 Nginx / 云托管反向代理之后，正确识别真实客户端 IP 与协议
+  forward-headers-strategy: framework
+
+logging:
+  level:
+    root: info
+    com.coffee: info
